@@ -22,7 +22,7 @@ const Contacts = (datas) => {
         JSONS.push(data)
     
         fs.writeFileSync('data/contacts.json' , JSON.stringify(JSONS))
-        console.log("Data Telah Di Tambahkan!");
+        console.log("Data Telah Di Tambahkan!",data);
     } else {
         console.log("Silahkan Isi Data Dengan Lengkap!");
     }
