@@ -1,5 +1,5 @@
 
-const {Contacts} = require('./library/Contacts')
+const {Contacts , CheckFile} = require('./library/Contacts')
 const fs = require('fs');
 const express = require('express');
 const app = express();
@@ -16,6 +16,7 @@ app.get('/' , (req , res) => {
 app.post('/input' , (req,res) => {
     const { name, email, phone } = req.body;
     if (name && email && phone) {
+        CheckFile()
         Contacts({ name, email, phone });
         res.send('Data Berhasil Masuk!');
       } else {

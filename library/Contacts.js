@@ -1,16 +1,17 @@
 const fs = require('fs')
 
-
-const dirFolder = './data'
-if (!fs.existsSync(dirFolder)) {
-    fs.mkdirSync(dirFolder)
-    console.log('file missing , generated on',dirFolder);
-}
-
-const dirFile = './data/Contacts.json'
-if (!fs.existsSync(dirFile)) {
-    fs.writeFileSync(dirFile , '[]' , 'utf-8')
-    console.log('file missing , generated on',dirFile);
+const CheckFile = () => {
+    const dirFolder = './data'
+    if (!fs.existsSync(dirFolder)) {
+        fs.mkdirSync(dirFolder)
+        console.log('file missing , generated on',dirFolder);
+    }
+    
+    const dirFile = './data/Contacts.json'
+    if (!fs.existsSync(dirFile)) {
+        fs.writeFileSync(dirFile , '[]' , 'utf-8')
+        console.log('file missing , generated on',dirFile);
+    }
 }
 
 const Contacts = (datas) => {
@@ -30,4 +31,5 @@ const Contacts = (datas) => {
 
 module.exports = {
     Contacts,
+    CheckFile,
 }
